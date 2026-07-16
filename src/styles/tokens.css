@@ -1,0 +1,125 @@
+/* ============================================
+   DESIGN TOKENS
+   Two moods, one identity:
+   - "projects" (interior design) → brass accent
+   - "arts" (personal creative work) → verdigris accent
+   Theme toggle switches ink <-> paper base.
+   ============================================ */
+
+:root {
+  /* base neutrals */
+  --ink: #14171a;
+  --ink-soft: #1d2124;
+  --ink-line: rgba(242, 239, 233, 0.12);
+  --paper-on-ink: #f2efe9;
+  --paper-on-ink-soft: #a9a29424;
+  --muted-on-ink: #948c7d;
+
+  --paper: #f2efe9;
+  --paper-soft: #e8e3d8;
+  --paper-line: rgba(20, 23, 26, 0.12);
+  --ink-on-paper: #14171a;
+  --ink-on-paper-soft: #14171a;
+  --muted-on-paper: #6b6459;
+
+  /* accents */
+  --accent-projects: #b08d57;
+  --accent-projects-dim: #b08d5733;
+  --accent-arts: #4c7a73;
+  --accent-arts-dim: #4c7a7333;
+
+  /* active accent, default = projects; overridden per-section via [data-section] */
+  --accent: var(--accent-projects);
+  --accent-dim: var(--accent-projects-dim);
+
+  /* type */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "Inter", -apple-system, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* spacing scale */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 6.5rem;
+
+  --radius: 2px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg: var(--ink);
+  --bg-soft: var(--ink-soft);
+  --fg: var(--paper-on-ink);
+  --muted: var(--muted-on-ink);
+  --line: var(--ink-line);
+}
+
+[data-theme="light"] {
+  --bg: var(--paper);
+  --bg-soft: var(--paper-soft);
+  --fg: var(--ink-on-paper);
+  --muted: var(--muted-on-paper);
+  --line: var(--paper-line);
+}
+
+[data-section="arts"] {
+  --accent: var(--accent-arts);
+  --accent-dim: var(--accent-arts-dim);
+}
+
+[data-section="projects"] {
+  --accent: var(--accent-projects);
+  --accent-dim: var(--accent-projects-dim);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

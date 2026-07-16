@@ -1,0 +1,15 @@
+.page {
+  padding: calc(var(--sp-7) + var(--sp-3)) var(--sp-5) var(--sp-6);
+  max-width: 1200px;
+}
+.subtitle {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.note {
+  color: var(--muted);
+  margin-top: var(--sp-4);
+}

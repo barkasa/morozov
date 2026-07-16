@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Start",
+    "projects": "Projekte",
+    "arts": "Arts",
+    "about": "Über mich",
+    "contacts": "Kontakt"
+  },
+  "home": {
+    "eyebrow": "Ivan — Innenarchitektur & persönliche Arbeiten",
+    "title": "Räume und Dinge, die ich gestalte",
+    "subtitle": "Innenarchitektur-Projekte auf der einen Seite, persönliche kreative Arbeiten — von Blender bis Zeichnung — auf der anderen.",
+    "cta_projects": "Projekte ansehen",
+    "cta_arts": "Arts ansehen"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
+  },
+  "projects": {
+    "title": "Projekte",
+    "subtitle": "Innenarchitektur"
+  },
+  "arts": {
+    "title": "Arts",
+    "subtitle": "Persönliche kreative Arbeiten — Studium, Arbeit, Hobby"
+  },
+  "about": {
+    "title": "Über mich"
+  },
+  "contacts": {
+    "title": "Kontakt",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "success": "Danke — ich melde mich bald bei dir.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib mir direkt."
+  },
+  "notfound": {
+    "title": "Seite nicht gefunden",
+    "text": "Diese Seite existiert nicht.",
+    "cta": "Zurück zur Startseite"
+  }
+}

@@ -1,0 +1,196 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  padding: var(--sp-3) var(--sp-5);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---- logo ---- */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.logoMark {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2efe9;
+  color: #14171a;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 3px;
+}
+
+.logoWord {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--fg);
+}
+
+/* ---- desktop nav row ---- */
+
+.desktopNav {
+  display: flex;
+  gap: var(--sp-4);
+}
+
+.navLink {
+  position: relative;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding-bottom: 4px;
+  transition: color 0.25s var(--ease);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
+.navLink:hover {
+  color: var(--fg);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+.navLinkActive {
+  color: var(--fg);
+}
+
+.navLinkActive::after {
+  transform: scaleX(1);
+  background: var(--accent);
+}
+
+/* ---- desktop utilities (lang + theme) ---- */
+
+.desktopUtilities {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.langs {
+  display: flex;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.langBtn,
+.langActive {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  transition: color 0.25s var(--ease);
+}
+
+.langActive {
+  color: var(--accent);
+}
+
+.langBtn:hover {
+  color: var(--fg);
+}
+
+.themeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 1.15rem;
+  display: flex;
+  padding: 0;
+  transition: color 0.25s var(--ease);
+}
+
+.themeBtn:hover {
+  color: var(--accent);
+}
+
+/* ---- mobile burger trigger (hidden on desktop) ---- */
+
+.trigger {
+  display: none;
+  position: relative;
+  z-index: 160;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.trigger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--fg);
+  transition: transform 0.3s var(--ease), opacity 0.2s var(--ease);
+}
+
+.triggerOpen span:first-child {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.triggerOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.triggerOpen span:last-child {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+@media (max-width: 880px) {
+  .desktopNav,
+  .desktopUtilities {
+    display: none;
+  }
+
+  .trigger {
+    display: flex;
+  }
+
+  .header {
+    padding: var(--sp-2) var(--sp-3);
+  }
+}
