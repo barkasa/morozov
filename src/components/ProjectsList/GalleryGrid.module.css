@@ -10,6 +10,7 @@
   color: var(--fg);
   display: block;
   position: relative;
+  transition: transform 0.4s var(--ease);
 }
 
 .tag {
@@ -22,9 +23,19 @@
 
 .imageWrap {
   overflow: hidden;
-  border-radius: var(--radius);
-  aspect-ratio: 4 / 3;
   background: var(--bg-soft);
+}
+
+/* Projects: crisp 4:3, subtle radius — "blueprint" precision */
+.wide .imageWrap {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+}
+
+/* Arts: square, clearly rounded — "sketchbook" softness */
+.square .imageWrap {
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
 }
 
 .imageWrap img {
@@ -36,6 +47,17 @@
 
 .card:hover .imageWrap img {
   transform: scale(1.04);
+}
+
+/* Arts: italic caption on hover — playful, but no rotation/tilt */
+.square .caption h3,
+.square .tag {
+  transition: font-style 0.2s var(--ease);
+}
+
+.square .card:hover .caption h3,
+.square .card:hover .tag {
+  font-style: italic;
 }
 
 .caption {

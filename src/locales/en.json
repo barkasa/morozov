@@ -20,14 +20,50 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Interior design work"
+    "subtitle": "Interior design work",
+    "next": "Next project",
+    "back": "← Projects gallery"
   },
   "arts": {
     "title": "Arts",
-    "subtitle": "Personal creative work — study, work, hobby"
+    "subtitle": "Personal creative work — study, work, hobby",
+    "next": "Next piece",
+    "back": "← Arts gallery"
   },
   "about": {
-    "title": "About"
+    "eyebrow": "About",
+    "title": "Hi! My name is Ivan Morozov.",
+    "role": "Visual designer for interiors & small architectural forms.",
+    "intro": "Many people find it difficult to understand drawings or to imagine their future interior as a whole. That's where I can help.",
+    "bioHeading": "Let me tell you more about my background",
+    "bio": "I have extensive experience in design, graphics, rendering and 3D modeling for interiors and exteriors, as well as strong collaboration with architects and designers.",
+    "toolsHeading": "Tools",
+    "tools": ["3ds Max", "Corona", "V-Ray", "Blender", "Photoshop", "CorelDRAW"],
+    "education": "In 2006, I graduated from the Kyrgyz-Russian Slavic University (KRSU) with a Master's degree in Architecture.",
+    "experienceHeading": "Experience",
+    "experience": [
+      {
+        "period": "2006–2010",
+        "text": "Worked independently as an interior designer, focusing on apartments, houses, and restaurants."
+      },
+      {
+        "period": "2010–2016",
+        "text": "IND Architects — visualization, collaboration with partners and material manufacturers, direct client interaction. Later continued with the studio in Moscow on larger projects: apartments, houses, restaurants, food courts."
+      },
+      {
+        "period": "2016–2021",
+        "text": "Designer at Balter GmbH and Avaloid GmbH (Düsseldorf) — product visualizations for websites and advertising, packaging design, promotional materials, 3D mock-ups for exhibition halls, office space design."
+      },
+      {
+        "period": "2021 — present",
+        "text": "Freelance visual designer, collaborating closely with architects and other designers."
+      }
+    ],
+    "closing": "This work inspires me and is very close to my heart. It is always rewarding to see a visualization come to life. I believe strongly in my skills and motivation to create meaningful and engaging projects.",
+    "tagline": "Work and Enjoy Life!",
+    "linkCv": "CV / Resume",
+    "linkCertificate": "View Certificate",
+    "linkModels": "View 3ddd models"
   },
   "contacts": {
     "title": "Contacts",
@@ -38,6 +74,37 @@
     "sending": "Sending…",
     "success": "Thank you — I'll get back to you soon.",
     "error": "Something went wrong. Please try again or email me directly."
+  },
+  "impressum": {
+    "title": "Impressum",
+    "infoHeading": "Information according to § 5 TMG",
+    "name": "Ivan Morozov",
+    "addressHeading": "Address",
+    "address": ["Ivo-Beucker-Str. 20", "40237 Düsseldorf", "Germany"],
+    "contactHeading": "Contact",
+    "responsibleHeading": "Responsible for content (§ 18 Abs. 2 MStV)",
+    "responsibleText": "Ivan Morozov, address as above.",
+    "disputeHeading": "EU dispute resolution",
+    "disputeText": "The European Commission provides a platform for online dispute resolution (ODR): https://ec.europa.eu/consumers/odr/. We are not obliged and not willing to participate in dispute resolution proceedings before a consumer arbitration board.",
+    "liabilityHeading": "Liability for content",
+    "liabilityText": "As a service provider, I am responsible for my own content on these pages according to general laws. Content linked from external sites is not my responsibility; the respective provider is liable for that content.",
+    "note": "This page is a personal portfolio, not a registered business (no Gewerbe, no VAT ID)."
+  },
+  "datenschutz": {
+    "title": "Privacy Policy",
+    "intro": "This privacy policy explains what personal data is processed when you visit this website and what rights you have.",
+    "controllerHeading": "Controller",
+    "controllerText": "Ivan Morozov, Ivo-Beucker-Str. 20, 40237 Düsseldorf, Germany.",
+    "formHeading": "Contact form",
+    "formText": "The contact form is processed by Formspree, Inc. (USA). When you submit the form, your name, email address and message are transmitted to Formspree's servers and forwarded to my email inbox. Please see Formspree's privacy policy for details on their data processing.",
+    "hostingHeading": "Hosting",
+    "hostingText": "This site is hosted by Vercel Inc. (USA). Vercel may process technical data such as your IP address to serve the site and for security purposes.",
+    "storageHeading": "Local storage (theme & language)",
+    "storageText": "Your theme (light/dark) and language preference are saved in your browser's local storage only. No cookies and no tracking or analytics tools are used on this site.",
+    "rightsHeading": "Your rights",
+    "rightsText": "You have the right to request access to, correction of, or deletion of your personal data, and to object to its processing, subject to applicable law. You also have the right to lodge a complaint with a data protection supervisory authority.",
+    "contactHeading": "Contact for privacy inquiries",
+    "contactText": "For any questions about this privacy policy, please contact me using the details in the Impressum."
   },
   "notfound": {
     "title": "Page not found",

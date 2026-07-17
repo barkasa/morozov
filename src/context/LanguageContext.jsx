@@ -10,8 +10,9 @@ const LanguageContext = createContext(null);
 function getInitialLang() {
   const stored = window.localStorage.getItem("ivan-lang");
   if (stored && SUPPORTED.includes(stored)) return stored;
-  const browserLang = navigator.language?.slice(0, 2);
-  return SUPPORTED.includes(browserLang) ? browserLang : "en";
+  // Default to German regardless of browser language —
+  // the site's primary audience is based in Germany.
+  return "de";
 }
 
 export function LanguageProvider({ children }) {

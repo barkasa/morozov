@@ -8,7 +8,7 @@ export default function Arts() {
   const items = arts.map((a) => ({
     slug: a.slug,
     title: a.title,
-    cover: a.cover,
+    cover: a.images[0]?.id,
     meta: `${a.medium} — ${a.year}`,
   }));
 
@@ -16,7 +16,7 @@ export default function Arts() {
     <section className={styles.page}>
       <h1>{t("arts.title")}</h1>
       <p className={styles.subtitle}>{t("arts.subtitle")}</p>
-      <GalleryGrid items={items} basePath="/arts" />
+      <GalleryGrid items={items} basePath="/arts" aspect="square" />
     </section>
   );
 }

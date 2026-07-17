@@ -11,8 +11,8 @@
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
+  isolation: isolate;
 }
-
 /* ---- logo ---- */
 
 .logo {
@@ -50,6 +50,14 @@
 .desktopNav {
   display: flex;
   gap: var(--sp-4);
+}
+
+/* Arts: centered nav, like the reference — a different room, different posture */
+:global([data-section="arts"]) .desktopNav {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .navLink {

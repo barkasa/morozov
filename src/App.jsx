@@ -10,6 +10,7 @@ import Arts from "./pages/Arts/Arts";
 import ArtDetail from "./pages/ArtDetail/ArtDetail";
 import About from "./pages/About/About";
 import Contacts from "./pages/Contacts/Contacts";
+import Success from "./pages/Success/Success";
 import Impressum from "./pages/Impressum/Impressum";
 import Datenschutz from "./pages/Datenschutz/Datenschutz";
 import NotFound from "./pages/NotFound/NotFound";
@@ -54,6 +55,7 @@ export default function App() {
           <Route path="/arts/:slug" element={<ArtDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/success" element={<Success />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="*" element={<NotFound />} />

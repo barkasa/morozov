@@ -8,7 +8,7 @@ export default function Projects() {
   const items = projects.map((p) => ({
     slug: p.slug,
     title: p.title,
-    cover: p.cover,
+    cover: p.images[0]?.id,
     meta: `${p.location} — ${p.year}`,
   }));
 
@@ -16,7 +16,7 @@ export default function Projects() {
     <section className={styles.page}>
       <h1>{t("projects.title")}</h1>
       <p className={styles.subtitle}>{t("projects.subtitle")}</p>
-      <GalleryGrid items={items} basePath="/projects" />
+      <GalleryGrid items={items} basePath="/projects" aspect="4:3" />
     </section>
   );
 }

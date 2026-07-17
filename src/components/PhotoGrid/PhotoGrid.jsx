@@ -1,21 +1,25 @@
 import { useState } from "react";
-import Masonry from "react-masonry-css";
+import { cld } from "../../utils/cloudinary";
 import Lightbox from "../Lightbox/Lightbox";
 import styles from "./PhotoGrid.module.css";
 
-const breakpoints = { default: 3, 1024: 2, 640: 1 };
-
-// images: [{ src, caption }]
-export default function PhotoGrid({ images }) {
+// images: [{ id: cloudinary public_id, caption }]
+// aspect: "square" (Arts, 1200x1200) or "4:3" (Projects, 1200x900)
+export default function PhotoGrid({ images, aspect = "4:3" }) {
   const [activeIndex, setActiveIndex] = useState(null);
+
+  const gridDims = aspect === "square" ? { width: 700, height: 700 } : { width: 700, height: 525 };
+  const fullDims = aspect === "square" ? { width: 1200, height: 1200 } : { width: 1200, height: 900 };
+
+  // Lightbox gets the full-resolution crop for each image
+  const fullImages = images.map((img) => ({
+    src: cld(img.id, fullDims),
+    caption: img.caption,
+  }));
 
   return (
     <>
-      <Masonry
-        breakpointCols={breakpoints}
-        className={styles.masonry}
-        columnClassName={styles.column}
-      >
+      <div className={`${styles.grid} ${aspect === "square" ? styles.square : styles.wide}`}>
         {images.map((img, i) => (
           <button
             key={i}
@@ -23,13 +27,13 @@ export default function PhotoGrid({ images }) {
             onClick={() => setActiveIndex(i)}
             aria-label={`Open image ${i + 1} fullscreen`}
           >
-            <img src={img.src} alt={img.caption || ""} loading="lazy" />
+            <img src={cld(img.id, gridDims)} alt={img.caption || ""} loading="lazy" />
           </button>
         ))}
-      </Masonry>
+      </div>
 
       <Lightbox
-        images={images}
+        images={fullImages}
         index={activeIndex}
         onClose={() => setActiveIndex(null)}
         onNavigate={setActiveIndex}

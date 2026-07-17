@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import styles from "./Contacts.module.css";
 
-// TODO: replace with Ivan's own Formspree form ID (formspree.io/forms -> your form -> endpoint)
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgqgaje";
 
 export default function Contacts() {
   const { t } = useLanguage();
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const navigate = useNavigate();
+  const [status, setStatus] = useState("idle"); // idle | sending | error
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -22,8 +23,7 @@ export default function Contacts() {
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
-        setStatus("success");
-        form.reset();
+        navigate("/success");
       } else {
         setStatus("error");
       }
@@ -54,7 +54,6 @@ export default function Contacts() {
           {status === "sending" ? t("contacts.sending") : t("contacts.send")}
         </button>
 
-        {status === "success" && <p className={styles.success}>{t("contacts.success")}</p>}
         {status === "error" && <p className={styles.error}>{t("contacts.error")}</p>}
       </form>
     </section>

@@ -20,14 +20,50 @@
   },
   "projects": {
     "title": "Projekte",
-    "subtitle": "Innenarchitektur"
+    "subtitle": "Innenarchitektur",
+    "next": "Nächstes Projekt",
+    "back": "← Projekt-Galerie"
   },
   "arts": {
     "title": "Arts",
-    "subtitle": "Persönliche kreative Arbeiten — Studium, Arbeit, Hobby"
+    "subtitle": "Persönliche kreative Arbeiten — Studium, Arbeit, Hobby",
+    "next": "Nächste Arbeit",
+    "back": "← Arts-Galerie"
   },
   "about": {
-    "title": "Über mich"
+    "eyebrow": "Über mich",
+    "title": "Hallo! Mein Name ist Ivan Morozov.",
+    "role": "Visual Designer für Innenarchitektur & kleine architektonische Formen.",
+    "intro": "Vielen Menschen fällt es schwer, Zeichnungen zu verstehen oder sich ihr zukünftiges Interieur als Ganzes vorzustellen. Genau dabei kann ich helfen.",
+    "bioHeading": "Etwas mehr zu meinem Werdegang",
+    "bio": "Ich verfüge über umfangreiche Erfahrung in Design, Grafik, Rendering und 3D-Modellierung für Innen- und Außenbereiche sowie in der engen Zusammenarbeit mit Architekten und Designern.",
+    "toolsHeading": "Werkzeuge",
+    "tools": ["3ds Max", "Corona", "V-Ray", "Blender", "Photoshop", "CorelDRAW"],
+    "education": "2006 habe ich an der Kirgisisch-Russischen Slawischen Universität (KRSU) meinen Master in Architektur abgeschlossen.",
+    "experienceHeading": "Erfahrung",
+    "experience": [
+      {
+        "period": "2006–2010",
+        "text": "Selbstständig als Innenarchitekt tätig, mit Fokus auf Wohnungen, Häuser und Restaurants."
+      },
+      {
+        "period": "2010–2016",
+        "text": "IND Architects — Visualisierung, Zusammenarbeit mit Partnern und Materialherstellern, direkter Kundenkontakt. Später Fortsetzung im Moskauer Studio bei größeren Projekten: Wohnungen, Häuser, Restaurants, Food-Courts."
+      },
+      {
+        "period": "2016–2021",
+        "text": "Designer bei Balter GmbH und Avaloid GmbH (Düsseldorf) — Produktvisualisierungen für Websites und Werbung, Verpackungsdesign, Werbematerialien, 3D-Mockups für Messehallen, Gestaltung von Büroräumen."
+      },
+      {
+        "period": "seit 2021",
+        "text": "Freiberuflicher Visual Designer in enger Zusammenarbeit mit Architekten und anderen Designern."
+      }
+    ],
+    "closing": "Diese Arbeit begeistert mich und liegt mir sehr am Herzen. Es ist immer wieder schön zu sehen, wie eine Visualisierung zum Leben erwacht. Ich glaube fest an meine Fähigkeiten und meine Motivation, bedeutungsvolle und ansprechende Projekte zu schaffen.",
+    "tagline": "Arbeite und genieße das Leben!",
+    "linkCv": "Lebenslauf",
+    "linkCertificate": "Zertifikat ansehen",
+    "linkModels": "3ddd-Modelle ansehen"
   },
   "contacts": {
     "title": "Kontakt",
@@ -38,6 +74,37 @@
     "sending": "Wird gesendet…",
     "success": "Danke — ich melde mich bald bei dir.",
     "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib mir direkt."
+  },
+  "impressum": {
+    "title": "Impressum",
+    "infoHeading": "Angaben gemäß § 5 TMG",
+    "name": "Ivan Morozov",
+    "addressHeading": "Anschrift",
+    "address": ["Ivo-Beucker-Str. 20", "40237 Düsseldorf", "Deutschland"],
+    "contactHeading": "Kontakt",
+    "responsibleHeading": "Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)",
+    "responsibleText": "Ivan Morozov, Anschrift wie oben.",
+    "disputeHeading": "EU-Streitschlichtung",
+    "disputeText": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/. Ich bin nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+    "liabilityHeading": "Haftung für Inhalte",
+    "liabilityText": "Als Diensteanbieter bin ich für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Für die Inhalte verlinkter externer Seiten übernehme ich keine Verantwortung; dafür ist stets der jeweilige Anbieter verantwortlich.",
+    "note": "Diese Seite ist ein persönliches Portfolio und kein eingetragenes Gewerbe (kein Gewerbe, keine USt-IdNr.)."
+  },
+  "datenschutz": {
+    "title": "Datenschutzerklärung",
+    "intro": "Diese Datenschutzerklärung erläutert, welche personenbezogenen Daten beim Besuch dieser Website verarbeitet werden und welche Rechte Ihnen zustehen.",
+    "controllerHeading": "Verantwortlicher",
+    "controllerText": "Ivan Morozov, Ivo-Beucker-Str. 20, 40237 Düsseldorf, Deutschland.",
+    "formHeading": "Kontaktformular",
+    "formText": "Das Kontaktformular wird über Formspree, Inc. (USA) verarbeitet. Beim Absenden werden Ihr Name, Ihre E-Mail-Adresse und Ihre Nachricht an die Server von Formspree übermittelt und an mein E-Mail-Postfach weitergeleitet. Details zur Datenverarbeitung entnehmen Sie bitte der Datenschutzerklärung von Formspree.",
+    "hostingHeading": "Hosting",
+    "hostingText": "Diese Website wird von Vercel Inc. (USA) gehostet. Vercel kann technische Daten wie Ihre IP-Adresse zur Bereitstellung der Seite und zu Sicherheitszwecken verarbeiten.",
+    "storageHeading": "Lokale Speicherung (Design & Sprache)",
+    "storageText": "Ihre Einstellung für Design (hell/dunkel) und Sprache wird ausschließlich im lokalen Speicher (localStorage) Ihres Browsers gespeichert. Diese Website verwendet keine Cookies und keine Tracking- oder Analysetools.",
+    "rightsHeading": "Ihre Rechte",
+    "rightsText": "Sie haben das Recht auf Auskunft, Berichtigung oder Löschung Ihrer personenbezogenen Daten sowie das Recht, der Verarbeitung im Rahmen der geltenden Gesetze zu widersprechen. Außerdem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.",
+    "contactHeading": "Kontakt für Datenschutzanfragen",
+    "contactText": "Bei Fragen zu dieser Datenschutzerklärung wenden Sie sich bitte an die im Impressum angegebenen Kontaktdaten."
   },
   "notfound": {
     "title": "Seite nicht gefunden",
