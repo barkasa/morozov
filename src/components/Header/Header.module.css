@@ -4,14 +4,23 @@
   left: 0;
   right: 0;
   z-index: 100;
-  display: flex;
-  align-items: center;
-  gap: var(--sp-5);
-  padding: var(--sp-3) var(--sp-5);
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   isolation: isolate;
+}
+
+:global([data-section="arts"]) .header {
+  background: color-mix(in srgb, var(--bg-band) 90%, transparent);
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  padding: var(--sp-3) var(--sp-5);
 }
 /* ---- logo ---- */
 
@@ -198,7 +207,7 @@
     display: flex;
   }
 
-  .header {
+  .inner {
     padding: var(--sp-2) var(--sp-3);
   }
 }

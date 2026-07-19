@@ -5,6 +5,12 @@
   margin-top: var(--sp-5);
 }
 
+:global([data-section="arts"]) .grid {
+  background: var(--bg-stage);
+  padding: var(--sp-5);
+  border-radius: 24px;
+}
+
 .card {
   text-decoration: none;
   color: var(--fg);
@@ -47,17 +53,6 @@
 
 .card:hover .imageWrap img {
   transform: scale(1.04);
-}
-
-/* Arts: italic caption on hover — playful, but no rotation/tilt */
-.square .caption h3,
-.square .tag {
-  transition: font-style 0.2s var(--ease);
-}
-
-.square .card:hover .caption h3,
-.square .card:hover .tag {
-  font-style: italic;
 }
 
 .caption {

@@ -1,10 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HiOutlineX, HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 import styles from "./Lightbox.module.css";
 
 export default function Lightbox({ images, index, onClose, onNavigate }) {
   const touchStartX = useRef(null);
+  const [zoomed, setZoomed] = useState(false);
   const open = index !== null && index !== undefined;
+
+  useEffect(() => {
+    setZoomed(false);
+  }, [index]);
 
   useEffect(() => {
     if (!open) return;
@@ -42,6 +47,16 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
     touchStartX.current = null;
   }
 
+  // Click the image to zoom in on that point; click again to zoom back out.
+  function handleImageClick(e) {
+    e.stopPropagation();
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    e.currentTarget.style.transformOrigin = zoomed ? "center center" : `${x}% ${y}%`;
+    setZoomed((z) => !z);
+  }
+
   return (
     <div
       className={styles.overlay}
@@ -67,7 +82,12 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
       </button>
 
       <figure className={styles.figure} onClick={(e) => e.stopPropagation()}>
-        <img src={current.src} alt={current.caption || ""} />
+        <img
+          src={current.src}
+          alt={current.caption || ""}
+          onClick={handleImageClick}
+          className={`${styles.zoomableImg} ${zoomed ? styles.zoomed : ""}`}
+        />
         {current.caption && <figcaption>{current.caption}</figcaption>}
       </figure>
 

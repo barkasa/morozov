@@ -1,6 +1,7 @@
 .page {
   padding: calc(var(--sp-7) + var(--sp-3)) var(--sp-5) var(--sp-6);
   max-width: 560px;
+  margin: 0 auto;
 }
 
 .form {

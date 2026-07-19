@@ -5,7 +5,8 @@
   justify-content: center;
   gap: var(--sp-3);
   padding: var(--sp-6) var(--sp-5);
-  max-width: 1000px;
+  max-width: var(--container);
+  margin: 0 auto;
 }
 
 .eyebrow {

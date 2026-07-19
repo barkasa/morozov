@@ -9,7 +9,7 @@ export default function PhotoGrid({ images, aspect = "4:3" }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const gridDims = aspect === "square" ? { width: 700, height: 700 } : { width: 700, height: 525 };
-  const fullDims = aspect === "square" ? { width: 1200, height: 1200 } : { width: 1200, height: 900 };
+  const fullDims = aspect === "square" ? { width: 2000, height: 2000 } : { width: 2000, height: 1500 };
 
   // Lightbox gets the full-resolution crop for each image
   const fullImages = images.map((img) => ({

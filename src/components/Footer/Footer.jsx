@@ -28,32 +28,34 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.socials}>
-        {SOCIALS.map(({ label, href, Icon }) => (
-          <a
-            key={label}
-            href={href}
-            target={href.startsWith("mailto:") ? undefined : "_blank"}
-            rel="noreferrer"
-            aria-label={label}
-            className={styles.socialLink}
-          >
-            <Icon />
-          </a>
-        ))}
-      </div>
+      <div className={styles.inner}>
+        <div className={styles.socials}>
+          {SOCIALS.map(({ label, href, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noreferrer"
+              aria-label={label}
+              className={styles.socialLink}
+            >
+              <Icon />
+            </a>
+          ))}
+        </div>
 
-      <p className={styles.credit}>
-        Created by Morozov Ivan © {year} · Düsseldorf (Germany) ·{" "}
-        <a href="tel:+4915752647752">+49 1575 2647752</a> ·{" "}
-        <a href="mailto:morosow.iwan@gmail.com">morosow.iwan@gmail.com</a>
-      </p>
+        <p className={styles.credit}>
+          Created by Morozov Ivan © {year} · Düsseldorf (Germany) ·{" "}
+          <a href="tel:+4915752647752">+49 1575 2647752</a> ·{" "}
+          <a href="mailto:morosow.iwan@gmail.com">morosow.iwan@gmail.com</a>
+        </p>
 
-      <div className={styles.bottom}>
-        <span>{t("footer.rights")}</span>
-        <div className={styles.legal}>
-          <Link to="/impressum">{t("footer.impressum")}</Link>
-          <Link to="/datenschutz">{t("footer.datenschutz")}</Link>
+        <div className={styles.bottom}>
+          <span>{t("footer.rights")}</span>
+          <div className={styles.legal}>
+            <Link to="/impressum">{t("footer.impressum")}</Link>
+            <Link to="/datenschutz">{t("footer.datenschutz")}</Link>
+          </div>
         </div>
       </div>
     </footer>

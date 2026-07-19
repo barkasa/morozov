@@ -48,6 +48,7 @@
 
   --radius: 2px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1654px;
 }
 
 [data-theme="dark"] {
@@ -72,12 +73,18 @@
   --bg: #121a1e;
   --bg-soft: #1a2529;
   --line: rgba(199, 219, 214, 0.14);
+  --bg-band: #0c1316;
+  --bg-stage: #06090b;
+  --bg-deep: #030507;
 }
 
 [data-theme="light"][data-section="arts"] {
   --bg: #d9e5e1;
   --bg-soft: #c7d9d3;
   --line: rgba(24, 38, 34, 0.14);
+  --bg-band: #c3cfcb;
+  --bg-stage: #a7b3af;
+  --bg-deep: #8b9793;
 }
 
 [data-section="arts"] {

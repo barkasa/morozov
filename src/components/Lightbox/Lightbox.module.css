@@ -33,6 +33,13 @@
   max-height: 80vh;
   object-fit: contain;
   border-radius: var(--radius);
+  cursor: zoom-in;
+  transition: transform 0.35s var(--ease);
+}
+
+.zoomed {
+  cursor: zoom-out;
+  transform: scale(2.2);
 }
 
 .figure figcaption {

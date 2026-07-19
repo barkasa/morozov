@@ -13,11 +13,16 @@ export default function NextUp({ items, currentSlug, basePath, label }) {
 
   return (
     <Link to={`${basePath}/${next.slug}`} className={styles.nextUp}>
-      <span className={styles.label}>{label}</span>
-      <span className={styles.title}>{next.title}</span>
+      <span className={styles.text}>
+        <span className={styles.label}>{label}</span>
+        <span className={styles.title}>{next.title}</span>
+      </span>
+      <span className={styles.wire} aria-hidden="true" />
       {coverId && (
         <span className={styles.thumbWrap}>
-          <img src={cld(coverId, { width: 200, height: 200 })} alt={next.title} loading="lazy" />
+          <span className={styles.thumbImg}>
+            <img src={cld(coverId, { width: 200, height: 200 })} alt={next.title} loading="lazy" />
+          </span>
         </span>
       )}
     </Link>
