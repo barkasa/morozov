@@ -3,6 +3,7 @@ import { projects } from "../../data/projects";
 import { useLanguage } from "../../context/LanguageContext";
 import PhotoGrid from "../../components/PhotoGrid/PhotoGrid";
 import NextUp from "../../components/NextUp/NextUp";
+import Linkify from "../../components/Linkify/Linkify";
 import styles from "../Projects/Projects.module.css";
 
 export default function ProjectDetail() {
@@ -28,7 +29,9 @@ export default function ProjectDetail() {
       </Link>
       <span className={styles.subtitle}>{project.location} — {project.year}</span>
       <h1>{project.title}</h1>
-      <p className={styles.note}>{description}</p>
+      <p className={styles.note}>
+        <Linkify text={description} />
+      </p>
       <PhotoGrid images={project.images} aspect="4:3" />
       <NextUp items={projects} currentSlug={slug} basePath="/projects" label={t("projects.next")} />
     </section>

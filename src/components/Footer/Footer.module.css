@@ -1,9 +1,6 @@
 .footer {
   border-top: 1px solid var(--line);
-}
-
-:global([data-section="arts"]) .footer {
-  background: var(--bg-band);
+  background: var(--bg-band, transparent);
 }
 
 .inner {
@@ -81,4 +78,17 @@
 
 .legal a:hover {
   color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .bottom {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .legal {
+    justify-content: center;
+    width: 100%;
+  }
 }

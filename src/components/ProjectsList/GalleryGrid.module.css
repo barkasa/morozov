@@ -11,6 +11,17 @@
   border-radius: 24px;
 }
 
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  :global([data-section="arts"]) .grid {
+    padding: var(--sp-3);
+    border-radius: 16px;
+  }
+}
+
 .card {
   text-decoration: none;
   color: var(--fg);

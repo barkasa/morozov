@@ -7,11 +7,11 @@
     "contacts": "Contacts"
   },
   "home": {
-    "eyebrow": "Ivan — interior design & personal work",
-    "title": "Spaces and things I make",
-    "subtitle": "Interior design projects on one side, personal creative work — from Blender to drawing — on the other.",
-    "cta_projects": "View projects",
-    "cta_arts": "View arts"
+    "eyebrow": "Interior Design & Personal Art",
+    "title": "Interiors with intent. Ideas without limits.",
+    "subtitle": "Interior design projects on one side — personal creative work, from Blender to drawing, on the other.",
+    "cta_projects": "All projects",
+    "cta_arts": "All arts"
   },
   "footer": {
     "rights": "All rights reserved.",

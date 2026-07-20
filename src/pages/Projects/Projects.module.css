@@ -3,6 +3,12 @@
   max-width: var(--container);
   margin: 0 auto;
 }
+
+@media (max-width: 640px) {
+  .page {
+    padding: calc(var(--sp-6) + var(--sp-2)) var(--sp-3) var(--sp-5);
+  }
+}
 .subtitle {
   color: var(--muted);
   font-family: var(--font-mono);
@@ -25,4 +31,12 @@
 .note {
   color: var(--muted);
   margin-top: var(--sp-4);
+}
+.note a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.note a:hover {
+  opacity: 0.75;
 }

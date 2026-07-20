@@ -67,24 +67,57 @@
   --line: var(--paper-line);
 }
 
-/* Arts: shift the whole background toward a slate/blue-grey mood,
-   not just the accent color — a different "room", not just a different tag. */
-[data-theme="dark"][data-section="arts"] {
-  --bg: #121a1e;
-  --bg-soft: #1a2529;
-  --line: rgba(199, 219, 214, 0.14);
-  --bg-band: #0c1316;
-  --bg-stage: #06090b;
-  --bg-deep: #030507;
+/* ---- zone color systems ----
+   Same principle everywhere: header/footer = lightest tier, general page
+   background = middle tier, main content area (--bg-center) = darkest tier.
+   "Projects" bucket covers Projects, Home, Contacts, Impressum, Datenschutz,
+   404 — everything that isn't Arts or About. */
+
+/* Projects (+ Home + everything else) — dark theme: left as before, only
+   the center tint (not touched this round — Ivan only specified light theme) */
+[data-theme="dark"][data-section="projects"] {
+  --bg-center: #211c15;
 }
 
+/* Projects (+ Home + everything else) — light theme: exact values from Ivan */
+[data-theme="light"][data-section="projects"] {
+  --bg-band: #ffffff;
+  --bg: #f2efe9;
+  --bg-center: #e1ddd7;
+}
+
+/* Arts — dark theme: soft cool sage/teal pastel, two nested panels a touch darker */
+[data-theme="dark"][data-section="arts"] {
+  --line: rgba(199, 219, 214, 0.12);
+  --bg-center: #1b2225;
+  --bg-stage: #151a1c;
+  --bg-deep: #0f1315;
+}
+
+/* Arts — light theme: exact values from Ivan.
+   band (header/footer, lightest) > bg/bg-soft (general) > center (darkest) */
 [data-theme="light"][data-section="arts"] {
-  --bg: #d9e5e1;
-  --bg-soft: #c7d9d3;
-  --line: rgba(24, 38, 34, 0.14);
-  --bg-band: #c3cfcb;
-  --bg-stage: #a7b3af;
-  --bg-deep: #8b9793;
+  --line: rgba(24, 38, 34, 0.12);
+  --bg: #bec8c9;
+  --bg-soft: #b3bfc0;
+  --bg-band: #e1e8e8;
+  --bg-center: #a9b6b7;
+  --bg-stage: #98a5a6;
+  --bg-deep: #838f90;
+}
+
+/* About — dedicated purple palette + its own harmonizing accent for
+   links/underlines/hover states (overrides the default brass accent). */
+[data-theme="light"][data-section="about"] {
+  --line: rgba(60, 48, 75, 0.15);
+  --bg-band: #d2d2d2;
+  --bg: #c9c4d1;
+  --bg-center: #aca8b4;
+}
+
+[data-section="about"] {
+  --accent: #8c7ea8;
+  --accent-dim: #8c7ea833;
 }
 
 [data-section="arts"] {

@@ -4,14 +4,10 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  background: color-mix(in srgb, var(--bg-band, var(--bg)) 88%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   isolation: isolate;
-}
-
-:global([data-section="arts"]) .header {
-  background: color-mix(in srgb, var(--bg-band) 90%, transparent);
 }
 
 .inner {
@@ -45,6 +41,11 @@
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: 3px;
+}
+
+:global([data-theme="light"]) .logoMark {
+  background: #14171a;
+  color: #f2efe9;
 }
 
 .logoWord {

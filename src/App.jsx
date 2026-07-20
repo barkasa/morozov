@@ -20,7 +20,11 @@ import NotFound from "./pages/NotFound/NotFound";
 function useSectionAttribute() {
   const { pathname } = useLocation();
   useEffect(() => {
-    const section = pathname.startsWith("/arts") ? "arts" : "projects";
+    const section = pathname.startsWith("/arts")
+      ? "arts"
+      : pathname.startsWith("/about")
+        ? "about"
+        : "projects";
     document.documentElement.setAttribute("data-section", section);
   }, [pathname]);
 }
@@ -46,7 +50,7 @@ export default function App() {
       <ScrollToTop />
       <Header menuOpen={menuOpen} onToggleMenu={() => setMenuOpen((v) => !v)} />
       <Burger open={menuOpen} onClose={() => setMenuOpen(false)} />
-      <main>
+      <main style={{ background: "var(--bg-center)" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
