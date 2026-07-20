@@ -16,11 +16,7 @@ const DECOR_RIGHT_ID = "art_fsmqhz";
 // not just covers.
 function pickRandom(entries) {
   const pool = entries.flatMap((entry) =>
-    entry.images.map((img) => ({
-      slug: entry.slug,
-      title: entry.title,
-      imageId: img.id,
-    })),
+    entry.images.map((img) => ({ slug: entry.slug, title: entry.title, imageId: img.id }))
   );
   if (pool.length === 0) return null;
   return pool[Math.floor(Math.random() * pool.length)];
@@ -90,10 +86,7 @@ export default function Home() {
         style={{ gridTemplateColumns: `repeat(${cards.length}, 1fr)` }}
       >
         {cards.map((card) => (
-          <div
-            key={card.key}
-            className={`${styles.cardWrap} ${card.dim ? styles.tileDecor : ""}`}
-          >
+          <div key={card.key} className={`${styles.cardWrap} ${card.dim ? styles.tileDecor : ""}`}>
             <Link
               to={card.to}
               className={`${styles.tile} ${card.accent === "arts" ? styles.tileArts : styles.tileProjects}`}
@@ -101,7 +94,6 @@ export default function Home() {
               <img
                 src={cld(card.imageId, { width: 900, height: 1150 })}
                 alt={card.label}
-                // style={card.dim ? { opacity: 0.78 } : undefined}
               />
               <div className={styles.tileOverlay}>
                 <span className={styles.tileTag}>{card.tag}</span>

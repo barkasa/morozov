@@ -29,6 +29,35 @@ function useSectionAttribute() {
   }, [pathname]);
 }
 
+// Keeps <meta name="theme-color"> in sync with whatever --bg is currently
+// active, so Android's status/navigation bar doesn't default to white
+// against a dark theme. A MutationObserver is the most robust way to do
+// this since data-theme and data-section are set by two different
+// components and we don't want to depend on effect ordering between them.
+function useThemeColorMeta() {
+  useEffect(() => {
+    function updateThemeColor() {
+      const bg = getComputedStyle(document.documentElement).getPropertyValue("--bg").trim();
+      if (!bg) return;
+      let meta = document.querySelector('meta[name="theme-color"]');
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute("name", "theme-color");
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", bg);
+    }
+
+    updateThemeColor();
+    const observer = new MutationObserver(updateThemeColor);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme", "data-section"],
+    });
+    return () => observer.disconnect();
+  }, []);
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -39,6 +68,7 @@ function ScrollToTop() {
 
 export default function App() {
   useSectionAttribute();
+  useThemeColorMeta();
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
 

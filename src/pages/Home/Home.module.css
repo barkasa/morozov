@@ -68,11 +68,7 @@
 }
 
 .tile:hover .tileOverlay {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(10, 10, 10, 0.55) 55%
-  );
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.55) 55%);
 }
 
 .tileOverlay {
@@ -86,11 +82,7 @@
   justify-content: center;
   gap: var(--sp-1);
   padding: var(--sp-4) var(--sp-3) var(--sp-2);
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(10, 10, 10, 0.42) 55%
-  );
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.42) 55%);
   backdrop-filter: blur(3px);
   text-align: center;
   transition: background 0.3s var(--ease);
