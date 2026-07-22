@@ -58,6 +58,19 @@ function useThemeColorMeta() {
   }, []);
 }
 
+// Blocks the right-click context menu specifically on images, so
+// "Save image as..." isn't a one-click action. (Doesn't stop DevTools/
+// screenshots — nothing client-side truly can — just deters casual copying.)
+function useImageContextMenuGuard() {
+  useEffect(() => {
+    function handleContextMenu(e) {
+      if (e.target.tagName === "IMG") e.preventDefault();
+    }
+    document.addEventListener("contextmenu", handleContextMenu);
+    return () => document.removeEventListener("contextmenu", handleContextMenu);
+  }, []);
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -69,6 +82,7 @@ function ScrollToTop() {
 export default function App() {
   useSectionAttribute();
   useThemeColorMeta();
+  useImageContextMenuGuard();
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
 

@@ -1,4 +1,5 @@
 import { useLanguage } from "../../context/LanguageContext";
+import Seo from "../../components/Seo/Seo";
 import styles from "./Legal.module.css";
 
 export default function Impressum() {
@@ -7,6 +8,7 @@ export default function Impressum() {
 
   return (
     <section className={styles.page}>
+      <Seo title="Impressum — Ivan Morozov" />
       <h1>{t("impressum.title")}</h1>
 
       <div className={styles.block}>

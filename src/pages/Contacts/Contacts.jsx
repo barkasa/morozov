@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import Seo from "../../components/Seo/Seo";
 import styles from "./Contacts.module.css";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgqgaje";
@@ -34,6 +35,7 @@ export default function Contacts() {
 
   return (
     <section className={styles.page}>
+      <Seo title="Contact — Ivan Morozov" />
       <h1>{t("contacts.title")}</h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>

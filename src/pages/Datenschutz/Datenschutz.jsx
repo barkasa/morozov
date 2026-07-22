@@ -1,4 +1,5 @@
 import { useLanguage } from "../../context/LanguageContext";
+import Seo from "../../components/Seo/Seo";
 import styles from "../Impressum/Legal.module.css";
 
 export default function Datenschutz() {
@@ -6,6 +7,7 @@ export default function Datenschutz() {
 
   return (
     <section className={styles.page}>
+      <Seo title="Datenschutz — Ivan Morozov" />
       <h1>{t("datenschutz.title")}</h1>
       <p>{t("datenschutz.intro")}</p>
 

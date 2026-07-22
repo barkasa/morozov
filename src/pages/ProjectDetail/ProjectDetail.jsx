@@ -4,6 +4,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import PhotoGrid from "../../components/PhotoGrid/PhotoGrid";
 import NextUp from "../../components/NextUp/NextUp";
 import Linkify from "../../components/Linkify/Linkify";
+import Seo from "../../components/Seo/Seo";
 import styles from "../Projects/Projects.module.css";
 
 export default function ProjectDetail() {
@@ -24,6 +25,7 @@ export default function ProjectDetail() {
 
   return (
     <section className={styles.page}>
+      <Seo title={`${project.title} — Ivan Morozov`} description={description} />
       <Link to="/projects" className={styles.backLink}>
         {t("projects.back")}
       </Link>

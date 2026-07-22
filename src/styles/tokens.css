@@ -164,6 +164,23 @@ a {
 img {
   max-width: 100%;
   display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* No blue text-selection highlight anywhere, except inside form fields
+   (contact form still needs to be selectable/editable). */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 :focus-visible {

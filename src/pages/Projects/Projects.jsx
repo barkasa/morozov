@@ -1,6 +1,7 @@
 import { useLanguage } from "../../context/LanguageContext";
 import { projects } from "../../data/projects";
 import GalleryGrid from "../../components/ProjectsList/GalleryGrid";
+import Seo from "../../components/Seo/Seo";
 import styles from "./Projects.module.css";
 
 export default function Projects() {
@@ -14,6 +15,10 @@ export default function Projects() {
 
   return (
     <section className={styles.page}>
+      <Seo
+        title="Projects — Interior Design | Ivan Morozov"
+        description={t("projects.subtitle")}
+      />
       <h1>{t("projects.title")}</h1>
       <p className={styles.subtitle}>{t("projects.subtitle")}</p>
       <GalleryGrid items={items} basePath="/projects" aspect="4:3" />

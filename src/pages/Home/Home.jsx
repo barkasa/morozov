@@ -4,19 +4,24 @@ import { useLanguage } from "../../context/LanguageContext";
 import { projects } from "../../data/projects";
 import { arts } from "../../data/arts";
 import { cld } from "../../utils/cloudinary";
+import Seo from "../../components/Seo/Seo";
 import styles from "./Home.module.css";
 
 // Decorative cutout renders (transparent PNG/WebP) used for the two
 // "gallery link" cards on the outer edges. Leave as null to hide that card.
-const DECOR_LEFT_ID = "nterior_lr6lcg";
-const DECOR_RIGHT_ID = "art_fsmqhz";
+const DECOR_LEFT_ID = "nterior2_m6nfy8";
+const DECOR_RIGHT_ID = "art2_vnblj0";
 
 // Flattens every image from every entry into one pool, then picks one at
 // random — so the showcase can spotlight any photo from any project/art,
 // not just covers.
 function pickRandom(entries) {
   const pool = entries.flatMap((entry) =>
-    entry.images.map((img) => ({ slug: entry.slug, title: entry.title, imageId: img.id }))
+    entry.images.map((img) => ({
+      slug: entry.slug,
+      title: entry.title,
+      imageId: img.id,
+    })),
   );
   if (pool.length === 0) return null;
   return pool[Math.floor(Math.random() * pool.length)];
@@ -75,6 +80,10 @@ export default function Home() {
 
   return (
     <>
+      <Seo
+        title="Ivan Morozov — Interior Design & Personal Art"
+        description={t("home.subtitle")}
+      />
       <section className={styles.hero}>
         <span className={styles.eyebrow}>{t("home.eyebrow")}</span>
         <h1 className={styles.title}>{t("home.title")}</h1>
@@ -86,7 +95,10 @@ export default function Home() {
         style={{ gridTemplateColumns: `repeat(${cards.length}, 1fr)` }}
       >
         {cards.map((card) => (
-          <div key={card.key} className={`${styles.cardWrap} ${card.dim ? styles.tileDecor : ""}`}>
+          <div
+            key={card.key}
+            className={`${styles.cardWrap} ${card.dim ? styles.tileDecor : ""}`}
+          >
             <Link
               to={card.to}
               className={`${styles.tile} ${card.accent === "arts" ? styles.tileArts : styles.tileProjects}`}

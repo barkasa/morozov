@@ -1,4 +1,5 @@
 import { useLanguage } from "../../context/LanguageContext";
+import Seo from "../../components/Seo/Seo";
 import styles from "./About.module.css";
 
 export default function About() {
@@ -8,6 +9,7 @@ export default function About() {
 
   return (
     <section className={styles.page}>
+      <Seo title="About — Ivan Morozov" description={t("about.intro")} />
       <div className={styles.intro}>
         <div className={styles.photoWrap}>
           <img

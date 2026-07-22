@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "upload-images": "node scripts/upload-to-cloudinary.js"
+    "upload-images": "node scripts/upload-to-cloudinary.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "react": "^19.2.7",
